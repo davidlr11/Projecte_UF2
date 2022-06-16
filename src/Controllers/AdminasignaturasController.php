@@ -31,11 +31,20 @@ class AdminasignaturasController extends Controller {
             $sql="INSERT INTO asignaturas(nombre_asignatura,codigo_curso,id_profesor) VALUES(?,?,?)";
             $stmt = $bbdd->query($sql);
             $stmt->execute([$asignatura, $nombre_curso,$id_profesor]);
-            echo "<body class='cuerpo-body'><div class='reg_action-existe'>Asignatura creada correctamente.</div> <a class='reg_action-a' href='/adminasignaturas'>Volver a Asignaturas</a></body>"; 
+            ?>
+            <script>
+            window.alert("Asignatura creada correctamente.");
+            location.href='/adminasignaturas';
+            </script>
+            <?php
 
         } else {
-            echo "<body class='cuerpo-body'><div class='reg_action-existe'>Falta rellenar el campo.</div> <a class='reg_action-a' href='/adminasignaturas'>Volver a Asignaturas</a></body>"; 
-
+            ?>
+            <script>
+            window.alert("Falta rellenar el campo.");
+            location.href='/adminasignaturas';
+            </script>
+            <?php
         }
     }
 
@@ -52,11 +61,19 @@ class AdminasignaturasController extends Controller {
             $sql="UPDATE asignaturas SET nombre_asignatura='$nombre_asignatura',codigo_curso='$idCurso'  WHERE codigo_asignatura=$num_asignaturaModificar";
             $stmt = $bbdd->query($sql);
             $stmt->execute();
-            echo "<body class='cuerpo-body'><div class='reg_action-existe'>Asignatura actualizada correctamente.</div> <a class='reg_action-a' href='/adminasignaturas'>Volver a Asignaturas</a></body>"; 
-
+            ?>
+            <script>
+            window.alert("Asignatura actualizada correctamente.");
+            location.href='/adminasignaturas';
+            </script>
+            <?php
         } else {
-            echo "<body class='cuerpo-body'><div class='reg_action-existe'>Falta rellenar el campo.</div> <a class='reg_action-a' href='/adminasignaturas'>Volver a Asignaturas</a></body>"; 
-
+            ?>
+            <script>
+            window.alert("Falta rellenar campos.");
+            location.href='/adminasignaturas';
+            </script>
+            <?php
         }
     }
 
@@ -70,11 +87,19 @@ class AdminasignaturasController extends Controller {
             $stmt = $bbdd->query($sql);
             $stmt->execute();
 
-            echo "<body class='cuerpo-body'><div class='reg_action-existe'>Asignatura eliminada correctamente.</div> <a class='reg_action-a' href='/adminasignaturas'>Volver a Asignaturas</a></body>"; 
-
+            ?>
+            <script>
+            window.alert("Asignatura eliminada correctamente.");
+            location.href='/adminasignaturas';
+            </script>
+            <?php
         } else {
-            echo "<body class='cuerpo-body'><div class='reg_action-existe'>Falta rellenar el campo.</div> <a class='reg_action-a' href='/adminasignaturas'>Volver a Asignaturas</a></body>"; 
-
+            ?>
+            <script>
+            window.alert("Falta rellenar los campos.");
+            location.href='/adminasignaturas';
+            </script>
+            <?php
         }
     }
 }

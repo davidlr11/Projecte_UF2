@@ -8,7 +8,7 @@ if(!isset($_SESSION)){session_start();}
   table{
     display: flex;
     justify-content: center;
-    margin:10px 400px 0px 400px;
+    border:none;
   }
   td{
     padding: 10px;
@@ -39,7 +39,7 @@ if(!isset($_SESSION)){session_start();}
     align-items: center;
     border-radius: 3px;
     background-color:#57ccff;
-    margin:15px 400px 15px 400px;
+    margin:auto;
 
     padding: 15px;
   }

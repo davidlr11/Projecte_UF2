@@ -29,11 +29,20 @@ class AdmincursosController extends Controller {
             $sql="INSERT INTO cursos(nombre_curso) VALUES(?)";
             $stmt = $bbdd->query($sql);
             $stmt->execute([$curso]);
-            echo "<body class='cuerpo-body'><div class='reg_action-existe'>Curso creado correctamente.</div> <a class='reg_action-a' href='/admincursos'>Volver a Cursos</a></body>"; 
+            ?>
+            <script>
+            window.alert("Curso creado correctamente.");
+            location.href='/admincursos';
+            </script>
+            <?php
 
         } else {
-            echo "<body class='cuerpo-body'><div class='reg_action-existe'>Falta rellenar el campo.</div> <a class='reg_action-a' href='/admincursos'>Volver a Cursos</a></body>"; 
-
+            ?>
+            <script>
+            window.alert("Falta rellenar el campo.");
+            location.href='/admincursos';
+            </script>
+            <?php
         }
     }
 
@@ -49,11 +58,19 @@ class AdmincursosController extends Controller {
             $sql="UPDATE cursos SET nombre_curso='$nombre_curso' WHERE codigo_curso=$num_cursoModificar";
             $stmt = $bbdd->query($sql);
             $stmt->execute();
-            echo "<body class='cuerpo-body'><div class='reg_action-existe'>Curso actualizado correctamente.</div> <a class='reg_action-a' href='/admincursos'>Volver a Cursos</a></body>"; 
-
+            ?>
+            <script>
+            window.alert("Curso actualizado correctamente.");
+            location.href='/admincursos';
+            </script>
+            <?php
         } else {
-            echo "<body class='cuerpo-body'><div class='reg_action-existe'>Falta rellenar el campo.</div> <a class='reg_action-a' href='/admincursos'>Volver a Cursos</a></body>"; 
-
+            ?>
+            <script>
+            window.alert("Falta rellenar el campo.");
+            location.href='/admincursos';
+            </script>
+            <?php
         }
     }
 
@@ -78,11 +95,20 @@ class AdmincursosController extends Controller {
             
             $stmt = $bbdd->query($sql);
             $stmt->execute();*/
-            echo "<body class='cuerpo-body'><div class='reg_action-existe'>Curso y sus asignaturas asignadas, eliminadas correctamente.</div> <a class='reg_action-a' href='/admincursos'>Volver a Cursos</a></body>"; 
+            ?>
+            <script>
+            window.alert("Curso y sus asignaturas asignadas, eliminadas correctamente.");
+            location.href='/admincursos';
+            </script>
+            <?php
 
         } else {
-            echo "<body class='cuerpo-body'><div class='reg_action-existe'>Falta rellenar el campo.</div> <a class='reg_action-a' href='/admincursos'>Volver a Cursos</a></body>"; 
-
+            ?>
+            <script>
+            window.alert("Curso y sus asignaturas asignadas, eliminadas correctamente.");
+            location.href='/admincursos';
+            </script>
+            <?php
         }
     }
 

@@ -36,7 +36,12 @@ class AdminusuariosController extends Controller {
 
                 //si hay algún campo vacío que nos redirija a register
                 if (empty($name) || empty($username) || empty($email) || empty($password) || empty($password2) || empty($role)){
-                    echo "<body class='cuerpo-body'><div class='reg_action-existe'>Te faltan campos por completar.</div> <a class='reg_action-a' href='/adminusuarios'>Volver administración de usuarios.</a></body>"; 
+                    ?>
+                    <script>
+                    window.alert("Te faltan campos por completar.");
+                    location.href='/adminusuarios';
+                    </script>
+                    <?php
                 } else {
 
                     $hash = password_hash($password,PASSWORD_BCRYPT);
@@ -61,14 +66,22 @@ class AdminusuariosController extends Controller {
 
                         $stmt->execute([$username,$username]);
                     }
-                    echo "<body class='cuerpo-body'><div class='reg_action-existe'>Usuario añadido correctamente.</div> <a class='reg_action-a' href='/adminusuarios'>Volver a la administración de usuarios.</a></body>"; 
-
+                    ?>
+                    <script>
+                    window.alert("Usuario añadido correctamente.");
+                    location.href='/adminusuarios';
+                    </script>
+                    <?php
                    
                 }
                
             } else {
-                echo "<body class='cuerpo-body'><div class='reg_action-existe'>Las contraseñas no coinciden.</div> <a class='reg_action-a' href='/adminusuarios'>Volver a la administración de usuarios.</a></body>"; 
-                
+                ?>
+                <script>
+                window.alert("Las contraseñas no coinciden.");
+                location.href='/adminusuarios';
+                </script>
+                <?php                
             }    
     }
 
@@ -86,11 +99,20 @@ class AdminusuariosController extends Controller {
             $stmt = $bbdd->query($sql);
             $stmt->execute();
 
-            echo "<body class='cuerpo-body'><div class='reg_action-existe'>Usuario eliminado correctamente.</div> <a class='reg_action-a' href='/adminusuarios'>Volver a usuarios</a></body>"; 
-
+            ?>
+            <script>
+            window.alert("Usuario eliminado correctamente.");
+            location.href='/adminusuarios';
+            </script>
+            <?php
         } else {
-            echo "<body class='cuerpo-body'><div class='reg_action-existe'>Falta rellenar el campo.</div> <a class='reg_action-a' href='/adminusuarios'>Volver a usuarios</a></body>"; 
 
+            ?>
+                    <script>
+                    window.alert("Te faltan campos por completar.");
+                    location.href='/adminusuarios';
+                    </script>
+                    <?php
         }
     }
 
