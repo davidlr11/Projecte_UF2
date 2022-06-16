@@ -1,0 +1,55 @@
+CREATE TABLE usuarios(
+    username VARCHAR(255) NOT NULL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    rol VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE listas(
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    namelist VARCHAR(255) NOT NULL,
+    user_id VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE tareas(
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    nametask VARCHAR(255) NOT NULL,
+    descriptiontask VARCHAR(255) NOT NULL,
+    id_list INT NOT NULL,
+    id_user VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE estudiantes(
+    id_estudiante VARCHAR(255) NOT NULL,
+    codigo_curso INT NULL
+);
+CREATE TABLE profesores(
+    id_profesor VARCHAR(255) NOT NULL PRIMARY KEY UNIQUE,
+    id_usuario VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE cursos(
+    codigo_curso INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    nombre_curso VARCHAR(255) UNIQUE NOT NULL
+);
+
+CREATE TABLE asignaturas(
+    codigo_asignatura INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    nombre_asignatura VARCHAR(255) NOT NULL,
+    codigo_curso INT NOT NULL,
+    id_profesor VARCHAR(255) NOT NULL
+);
+
+ALTER TABLE `listas` ADD CONSTRAINT `listas_user_id_foreign` FOREIGN KEY(`user_id`) REFERENCES `usuarios`(`username`);
+ALTER TABLE `tareas` ADD CONSTRAINT `tareas_id_list_foreign` FOREIGN KEY(`id_list`) REFERENCES `listas`(`id`);
+ALTER TABLE `tareas` ADD CONSTRAINT `tareas_id_user_foreign` FOREIGN KEY(`id_user`) REFERENCES `usuarios`(`username`);
+ALTER TABLE `estudiantes` ADD CONSTRAINT `estudiantes_id_estudiante_foreign` FOREIGN KEY(`id_estudiante`) REFERENCES `usuarios`(`username`);
+ALTER TABLE `estudiantes` ADD CONSTRAINT `estudiantes_codigo_curso_foreign` FOREIGN KEY(`codigo_curso`) REFERENCES `cursos`(`codigo_curso`);
+ALTER TABLE `asignaturas` ADD CONSTRAINT `asignaturas_codigo_curso_foreign` FOREIGN KEY(`codigo_curso`) REFERENCES `cursos`(`codigo_curso`);
+ALTER TABLE `asignaturas` ADD CONSTRAINT `asignaturas_id_profesor_foreign` FOREIGN KEY(`id_profesor`) REFERENCES `profesores`(`id_profesor`);
+ALTER TABLE `profesores` ADD CONSTRAINT `profesores_id_usuario_foreign` FOREIGN KEY(`id_usuario`) REFERENCES `usuarios`(`username`);
+
+
+
+

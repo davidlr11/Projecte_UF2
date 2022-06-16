@@ -1,0 +1,169 @@
+body{
+    background: #34a4fc;
+}
+
+
+
+.recuadro{
+    display:flex;
+    flex-direction: row;
+    padding: 20px;
+    margin: 60px 250px 50px 250px;
+    background-color: white;
+    border-radius: 3px;
+}
+
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 45%;
+}
+
+.labellogo{
+    font-weight: 600;
+    font-size: 35px;
+}
+
+.formulario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55%;
+    
+}
+label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    width: 100%;
+  padding: 12px 20px;
+
+}
+
+.myButton {
+    margin: 0px 0px 10px 100px;
+	background-color:#34a5fc;
+	border-radius:3px;
+	border:2px solid #0071c7;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:12px 26px;
+	text-decoration:none;
+}
+.myButton:hover {
+	background-color:#63bbff;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+
+.recuadro2{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0px 30px 0px;
+    margin: 50px 250px 50px 250px;
+    background-color: white;
+    border-radius: 3px;
+}
+
+
+
+.myButton2 {
+    margin: 0px 0px 10px 170px;
+	background-color:#34a5fc;
+	border-radius:3px;
+	border:2px solid #0071c7;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:12px 26px;
+	text-decoration:none;
+}
+.myButton2:hover {
+	background-color:#63bbff;
+}
+.myButton2:active {
+	position:relative;
+	top:1px;
+}
+
+.select {
+    margin: 0px 0px 0px 25px;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 15px;
+    width: 100%;
+}    .select select {
+        font-family: 'Arial';
+        display: inline-block;
+        width: 100%;
+        cursor: pointer;
+        padding: 14px 24px;
+        outline: 0;
+        border: 1px hidden #2f2f2f;
+        border-radius: 3px;
+        background: #282828;
+        color: #e5e5e5;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+        .select select::-ms-expand {
+            display: none;
+        }
+        .select select:hover,
+        .select select:focus {
+            color: #ffffff;
+            background: #282828;
+        }
+        .select select:disabled {
+            opacity: 0.1;
+            pointer-events: none;
+        }
+.select_arrow {
+    position: absolute;
+    top: 16px;
+    right: 21px;
+    width: 0px;
+    height: 0px;
+    border: solid #ffffff;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+.select select:hover ~ .select_arrow,
+.select select:focus ~ .select_arrow {
+    border-color: #ffffff;
+}
+.select select:disabled ~ .select_arrow {
+    border-top-color: #d43e3e;
+}
+.yaregistrado{
+    margin:0px 0px 0px 100px;
+    
+}
+
+.botonFinal{
+    color:black;
+    font-weight: 600;
+}
